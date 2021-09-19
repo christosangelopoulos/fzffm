@@ -1,0 +1,16 @@
+Exit  
+No_Theme  
+Nordisk  --color=fg:#D8DEE9,bg:#2E3440,hl:#6c6c6c,fg+:#D8DEE9,bg+:#434C5E,hl+:#A3BE8C,pointer:#BF616A,info:#4C566A,spinner:#4C566A,header:#DCD81F,prompt:#81A1C1,marker:#EBCB8B 
+Molokai  --color=fg:#d0d0d0,bg:#121212,hl:#5f87af,fg+:#d0d0d0,bg+:#262626,hl+:#5fd7ff,info:#afaf87,prompt:#d7005f,spinner:#af5fff,pointer:#af5fff,marker:118 
+Oblivious  --color=fg:#d0d0d0,bg:#2E3436,hl:#5f87af,fg+:#d0d0d0,bg+:#2E3436,hl+:#5fd7ff,info:#afaf87,prompt:#BF616A,spinner:#af5fff,pointer:#BF616A,header:#DCD81F,marker:#EBCB8B 
+Seoul_256_Night  --color=fg:#6c6c6c,bg:#121212,hl:65,fg+:15,bg+:234,hl+:108,info:108,prompt:109,spinner:108,pointer:168,marker:168 
+Red_Dark  --color=fg:#af0000,bg:#000000,hl:202,fg+:214,bg+:52,hl+:231,info:52,prompt:196,spinner:208,pointer:196,marker:208
+Solarized_Colors  --color=bg+:#073642,bg:#002b36,spinner:#719e07,hl:#586e75,fg:#839496,header:#586e75,info:#cb4b16,pointer:#719e07,marker:#719e07,fg+:#839496,prompt:#719e07,hl+:#719e07
+Jellybeans  --color=fg:#d7d7d7,bg:#121212,hl:103,fg+:222,bg+:234,hl+:104,info:183,prompt:110,spinner:107,pointer:167,marker:215
+Seoul_Dusk  --color=fg:#6c6c6c,bg:#303030,hl:65,fg+:15,bg+:239,hl+:108,info:108,prompt:109,spinner:108,pointer:168,marker:168
+One_Dark  --color=fg:#cbccc6,bg:#1f2430,hl:#bd93f9,fg+:#f8f8f2,bg+:#191e2a,hl+:#ffcc66,info:#73d0ff,prompt:#50fa7b,pointer:#73d0ff,marker:#73d0ff,spinner:#73d0ff,header:#73d0ff
+Gruvbox_Dark  --color=fg:#ebdbb2,bg:#282828,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f,info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54
+Spacecamp  --color=fg:#dedede,bg:#121212,hl:#666666,fg+:#eeeeee,bg+:#282828,hl+:#cf73e6,info:#cf73e6,prompt:#FF0000,pointer:#cf73e6,marker:#f0d50c,spinner:#cf73e6,header:#91aadf
+Term_School  --color=fg:#f0f0f0,bg:#252c31,bg+:#005f5f,hl:#87d75f,gutter:#252c31,prompt:#f0f0f0,pointer:#dfaf00,marker:#00d7d7
+Dracula  --color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9,fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9,info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6,marker:#ff79c6,spinner:#ffb86c,header:#6272a4
+Ubunto  --color=fg:#F1F707,bg:#360B28,hl:#666666,fg+:#eeeeee,bg+:#621342,hl+:#cf73e6,info:#cf73e6,prompt:#FF0000,pointer:#cf73e6,marker:#f0d50c,spinner:#cf73e6,header:#91aadf
