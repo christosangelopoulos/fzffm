@@ -53,9 +53,8 @@ Edit **~/.config/fzffm/.conf** to your preferable installed applications, to mak
 
     kitty ~/fzffm/fzffm.sh 
 ---
-## SHORTCUTS - DEFAULT APPLICATIONS - BOOKMARKS
+## KEY BINDINGS - DEFAULT APPLICATIONS - BOOKMARKS
 
-Here are the  keyboard bindings that are used in the fzffm, to certain actions or to open prefered applications.  Both bindings and applications can be altered to one's wishes by editing the ~/.config/fzffm/fzffm.conf
 
 ⭡ ⭣ (arrow up - down)		:Move up-down
 
@@ -97,6 +96,10 @@ ctrl-alt-o    :Select application to open item
 
 ctrl-t             :Select Theme
 
+##  BOOKMARKS
+
+These Bookmarks again are quite arbitrary, the user can alter them to their prefernce editing **~/.config/fzffm/.conf**
+
  alt-1               :Move to home directory
 
  alt-2            :Move to Desktop directory 
@@ -116,6 +119,10 @@ ctrl-t             :Select Theme
  alt-b               :Move back one directory
 
  alt-z              :Move to Trash directory
+ 
+##  DEFAULT APPLICATIONS
+
+These applications work for me, naturally the user can alter them to the applications of their preference, editing **~/.config/fzffm/.conf**
 
  xed      :Default text editor
 
