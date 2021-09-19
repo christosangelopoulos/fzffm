@@ -4,27 +4,27 @@
 
 It is highly costumizable as far the keyboard bindings, the shortcuts and the applications that can be used.
 
-![First screen of fzffm](screenshots/screenshot 1.png)
+![](screenshots/screenshot 1.png)
 
 It is a simple script in bash.This command line file manager provides image preview (among other features). The name is quite self explanatory: Fuzzy Finder File Manager. Obviously it uses fzf to navigate to and select files and directories.
 
-![First screen of fzffm](screenshots/screenshot 2.png)
+![](screenshots/screenshot 2.png)
 
  The terminal emulator used is **kitty** (thus the easy image preview).
 Shortly a new edition will be uploaded to run this script on *any  other known terminal emulator*, using **uberzug**.
 
-![First screen of fzffm](screenshots/screenshot 3.png)
+![](screenshots/screenshot 3.png)
 
 Other dependencies are **rofi** (I use it with the open-with(ctrl-o) shortcut, and I can select with it the application with which I can open a file). I also use other applications as default to open various file types, as xed for .txt, viewnior for images, libreoffice for office files etc. However the user can edit the configuration file and  fill in his prefered and already installed applications.  
 
-![First screen of fzffm](screenshots/screenshot 4.png)
+![](screenshots/screenshot 4.png)
 
-![First screen of fzffm](screenshots/screenshot 5.png)
+![](screenshots/screenshot 5.png)
 
 
 FZFFM is highly configurable, because by tweeking a simple .conf file, you can set your preferred applications, default or not, AND preferred shortcuts for various actions, AND preferred bookmarks to navigate in the file system.
 
-![First screen of fzffm](screenshots/screenshot 6.png)
+![](screenshots/screenshot 6.png)
 
 ---
 
