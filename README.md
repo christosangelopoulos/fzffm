@@ -37,11 +37,11 @@ FZFFM is highly configurable, because by tweeking a simple .conf file, you can s
 
 ## DEPENDENCIES
 
-    sudo apt install kitty fzf imagemagick odt2txt catdoc epub-thumbnailer pdftoppm pdftotext
+    sudo apt install kitty fzf rofi imagemagick odt2txt catdoc epub-thumbnailer pdftoppm pdftotext
     
     or, depending on your system: 
     
-    sudo pacman -S kitty fzf imagemagick odt2txt catdoc epub-thumbnailer pdftoppm pdftotext
+    sudo pacman -S kitty fzf rofi imagemagick odt2txt catdoc epub-thumbnailer pdftoppm pdftotext
 
 Edit **~/.config/fzffm/.config** to your preferable installed applications, to make sure that files get opened by applications.
 
