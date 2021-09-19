@@ -53,6 +53,7 @@ Edit **~/.config/fzffm/.conf** to your preferable installed applications, to mak
 
     kitty ~/fzffm/fzffm.sh 
 ---
+## KEY BINDINGS
 
 
 ⭡ ⭣ (arrow up - down)		:Move up-down
