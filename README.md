@@ -1,13 +1,15 @@
 # fzffm
 
-## A command line file manager that supports image previews, among other features. It is highly costumizable as far the keyboard bindings, the shortcuts and the applications that can be used.
+## A command line file manager that supports image previews, (among other features). 
 
-I have written a simple script that is a command line file manager, that provides image preview (among other features). I have called it fzffm. The name is quite explanatory: Fuzzy Finder File Manager. Obviously it uses fzf to navigate to and select files and directories.
+It is highly costumizable as far the keyboard bindings, the shortcuts and the applications that can be used.
+
+It is a simple script in bash.This command line file manager provides image preview (among other features). The name is quite self explanatory: Fuzzy Finder File Manager. Obviously it uses fzf to navigate to and select files and directories.
 
  The terminal emulator used is **kitty** (thus the easy image preview).
 Shortly a new edition will be uploaded to run this script on *any  other known terminal emulator*, using **uberzug**.
 
-Other dependencies are rofi(I use it with the open-with(ctrl-o) shortcut, and I can select with it the application with which I can open a file). I also use other applications as default to open various file types, as xed for .txt, viewnior for images, libreoffice for office files etc. However the user can edit the configuration file and  fill in his prefered and already installed applications.  
+Other dependencies are **rofi** (I use it with the open-with(ctrl-o) shortcut, and I can select with it the application with which I can open a file). I also use other applications as default to open various file types, as xed for .txt, viewnior for images, libreoffice for office files etc. However the user can edit the configuration file and  fill in his prefered and already installed applications.  
 
 FZFFM is highly configurable, because by tweeking a simple .conf file, you can set your preferred applications, default or not, AND preferred shortcuts for various actions, AND preferred bookmarks to navigate in the file system.
 
