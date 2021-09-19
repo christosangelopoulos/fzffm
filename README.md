@@ -43,7 +43,7 @@ FZFFM is highly configurable, because by tweeking a simple .conf file, you can s
     
     sudo pacman -S kitty fzf rofi imagemagick odt2txt catdoc epub-thumbnailer pdftoppm pdftotext
 
-Edit **~/.config/fzffm/.config** to your preferable installed applications, to make sure that files get opened by applications.
+Edit **~/.config/fzffm/.conf** to your preferable installed applications, to make sure that files get opened by applications.
 
 ---
 
