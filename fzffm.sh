@@ -124,7 +124,7 @@ cd
 	; echo -e "File {}"|fillout \
 	; draw_line ╰ 43 ┬──────────┬╯ \
 	; draw_line ╭ 43 ╯Properties╰╮ ;  echo -e "Mode : "$(ls -l {} |sed "s/ .*//")|fillout ; i={} \
-	; echo -e "Type : "$(file --mime-type -b ${i##*.})|fillout ; echo -e "Size :" $(ls -shQ {}|sed "s/ .*$//g")|fillout ; echo -e "Date :" $(stat -c '%y' {} |sed "s/ .*$//")|fillout ; echo -e "Owner:" $(stat --printf='%U' {})|fillout ;  echo -e "Group:" $(stat --printf='%G' {})|fillout ; echo -e "Name :" {}|fillout ; draw_line ╰ 43 ╯ \
+	; echo -e "Type : "$(file --mime-type -b "${i##*_- .}")|fillout ; echo -e "Size :" $(ls -shQ {}|sed "s/ .*$//g")|fillout ; echo -e "Date :" $(stat -c '%y' {} |sed "s/ .*$//")|fillout ; echo -e "Owner:" $(stat --printf='%U' {})|fillout ;  echo -e "Group:" $(stat --printf='%G' {})|fillout ; echo -e "Name :" {}|fillout ; draw_line ╰ 43 ╯ \
 	; if [[ {} == *".jpg" ]] || [[ {} == *".jpeg" ]] ||[[ {} == *".png" ]] || [[ {} == *".svg" ]] ||[[ {} == *".JPG" ]] || [[ {} == *".JPEG" ]] \
 	; then if [ ! -e $HOME/.cache/fzffm/thumbnails/"$(shasum {}|sed "s/ .*$//")".png ] && [ -s {} ]; then 	convert -thumbnail x362 {}  $HOME/.cache/fzffm/thumbnails/"$(shasum {}|sed "s/ .*$//")".png \
 	;	fi \
