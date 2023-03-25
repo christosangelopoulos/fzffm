@@ -8,6 +8,13 @@
 # Fuzzy Finder File Manager                                    
 # Created by Christos Angelopoulos in 2021, under GNU GENERAL PUBLIC LICENSE
 #load config variables from config file
+#
+# General keys
+# TAB    : mark/unmark item
+# CTRL+H : show commands (fzffm.conf)
+#
+#
+#
 declare -A V
 TOTAL="$(cat $HOME/.config/fzffm/fzffm.conf|wc -l)"
 i=1
@@ -93,7 +100,7 @@ cd
 	-m \
 	-i \
 	--exact \
-	--expect=ctrl-o,ctrl-alt-o,ctrl-c,ctrl-v,ctrl-x,ctrl-d,ctrl-r,ctrl-z,alt-z,left,ctrl-h,ctrl-y,ctrl-u,alt-1,alt-2,alt-3,alt-4,alt-5,alt-6,alt-7,alt-8,alt-a,alt-v,alt-c,alt-b,ctrl-n,ctrl-alt-n,space,ctrl-t \
+	--expect=ctrl-o,ctrl-l,ctrl-g,ctrl-c,ctrl-v,ctrl-x,ctrl-d,ctrl-r,ctrl-z,alt-z,left,ctrl-h,ctrl-y,ctrl-u,alt-1,alt-2,alt-3,alt-4,alt-5,alt-6,alt-7,alt-8,alt-a,alt-v,alt-c,alt-b,ctrl-n,ctrl-alt-n,space,ctrl-t \
 	--preview='if [ "$FZF_PREVIEW_LINES" -ge 20 ] ; then LOGLINES=3 ; else LOGLINES=1; fi \
 	;if [[ "$FZF_PREVIEW_COLUMNS" -ge 77 ]] \
 	;then  X="$(( (( "$FZF_PREVIEW_COLUMNS" * 7/10 )) - (( "$FZF_PREVIEW_COLUMNS" * 3/10 )) + 50 ))";Y="3";MAXW=$((34 + (($X - 80))*2));MAXH=$(( "$FZF_PREVIEW_LINES" -3 ));fi \
@@ -116,8 +123,8 @@ cd
 	; then draw_line ╭ 43 ╯Selection╰╮ \
 	; echo -e "File {}"|fillout \
 	; draw_line ╰ 43 ┬──────────┬╯ \
-	; draw_line ╭ 43 ╯Properties╰╮ ;  echo -e "Mode :"$(ls -l {} |sed "s/ .*//")|fillout ; i={} \
-	; echo -e "Type :"${i##*.}|fillout ; echo -e "Size :" $(ls -shQ {}|sed "s/ .*$//g")|fillout ; echo -e "Date :" $(stat -c '%y' {} |sed "s/ .*$//")|fillout ; echo -e "Owner:" $(stat --printf='%U' {})|fillout ;  echo -e "Group:" $(stat --printf='%G' {})|fillout ; echo -e "Name :" {}|fillout ; draw_line ╰ 43 ╯ \
+	; draw_line ╭ 43 ╯Properties╰╮ ;  echo -e "Mode : "$(ls -l {} |sed "s/ .*//")|fillout ; i={} \
+	; echo -e "Type : "$(file --mime-type -b ${i##*.})|fillout ; echo -e "Size :" $(ls -shQ {}|sed "s/ .*$//g")|fillout ; echo -e "Date :" $(stat -c '%y' {} |sed "s/ .*$//")|fillout ; echo -e "Owner:" $(stat --printf='%U' {})|fillout ;  echo -e "Group:" $(stat --printf='%G' {})|fillout ; echo -e "Name :" {}|fillout ; draw_line ╰ 43 ╯ \
 	; if [[ {} == *".jpg" ]] || [[ {} == *".jpeg" ]] ||[[ {} == *".png" ]] || [[ {} == *".svg" ]] ||[[ {} == *".JPG" ]] || [[ {} == *".JPEG" ]] \
 	; then if [ ! -e $HOME/.cache/fzffm/thumbnails/"$(shasum {}|sed "s/ .*$//")".png ] && [ -s {} ]; then 	convert -thumbnail x362 {}  $HOME/.cache/fzffm/thumbnails/"$(shasum {}|sed "s/ .*$//")".png \
 	;	fi \
@@ -186,7 +193,7 @@ cd
 				#==================== FILE PARSING ==============================================
 				if [[ -f "$LINE" ]]
 				then 
-				#==================== Definition of file EXTENSION ==============================
+				#==========Definition of file EXTENSION - OPEN-WITH = ctrl-g======================
 					EXTENSION="$(echo "$LINE"|sed 's/^.*\.//')"
 					if [ $EXTENSION = txt ] || [ -z $EXTENSION ] || [ $EXTENSION = sh ] || [ $EXTENSION = css ] || [ $EXTENSION = json ] || [ $EXTENSION = md ] || [ $EXTENSION = xml ]
 					then 
@@ -427,11 +434,11 @@ cd
 						#================== DEFINING DELETE function ctrl-d ==============================
 						elif [[ "$(echo "$P"|head -1)" == "${V[_DELETE_]}" ]] 
 						then 
-						##Uncomment if you want to be prompted for each file before deleting
-							#echo "*** DELETE "$LINE" and move it to the TRASH? (y/n)"
-							#read REPLY  
-							#if [ "$REPLY" == "y" ]
-							#then
+						### Uncomment if you want to be prompted for each file before deleting ###
+							echo "*** DELETE "$LINE" and move it to the TRASH? (y/n)"
+							read REPLY  
+							if [ "$REPLY" == "y" ]
+							then                                                               ###
 									if [ "$LINE" != "." ] && [ "$LINE" != ".." ] && [ "$LINE" != "" ]
 									then			
 											if [[ -e $HOME/.local/share/Trash/files/"$LINE" ]] || [[ -d $HOME/.local/share/Trash/files/"$LINE" ]]
@@ -443,7 +450,7 @@ cd
 									else
 										echo "ABORT: Attempted to delete invalid file('.', '..' or '')"
 									fi	
-							#fi
+							fi
 						#================== DEFINING RENAME function ctrl-r ===============================
 						elif [[ "$(echo "$P"|head -1)" == "${V[_RENAME_]}" ]] 
 						then
@@ -549,10 +556,15 @@ cd
 								echo "CREATED ""$NAME"" file inside ""$PWD">>$HOME/fzffm/log.txt
 							fi
 						fi	
-						#================= DEFINING SELECT APP function ctrl-alt-o ========================
+						#================= DEFINING SELECT APP function ctrl-l ========================
 						if [[ "$(echo "$P"|head -1)" == "${V[_SELECT-APP_]}" ]] 
 						then 
-								APP="$(ls /usr/share/|rofi -dmenu -p "Open with" -l 5 -width 20)"&&"$APP" "$LINE" 
+								APP="$(ls /usr/share/| fzf --cycle --prompt "Open with")"&&"$APP" "$LINE" 
+						fi
+						#================= DEFINING OPEN XDG function ctrl-o ========================
+						if [[ "$(echo "$P"|head -1)" == "${V[_OPEN-XDG_]}" ]] 
+						then 
+								$(xdg-open "$LINE")
 						fi
 						#================= DEFINING MAKE NEW DIRECTORY ctrl-alt-n =========================
 						if [[ "$(echo "$P"|head -1)" == "${V[_CREATE-N-DIR_]}" ]] 
